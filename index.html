@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Interview Assistant</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <input type="checkbox" id="dark-mode-toggle" hidden>
+  
+  <div class="app-container">
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-robot"></i>
+        <span>AI Interview Assistant</span>
+      </div>
+      <label for="dark-mode-toggle" class="theme-switch" aria-label="Toggle Dark Mode">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+      </label>
+    </nav>
+
+    <!-- Landing Page Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Practice smarter, get hired faster</h1>
+        <p>Master your interview skills with real-time AI feedback and tailored questions.</p>
+        <button class="btn-primary">Start Interview</button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="dashboard-grid">
+        
+        <!-- Left Column -->
+        <div class="sidebar">
+          
+          <!-- Resume Upload Section -->
+          <section class="card upload-section">
+            <h3><i class="fa-solid fa-file-arrow-up"></i> Upload Resume</h3>
+            <div class="upload-zone">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <p>Drag & drop or <span>browse</span></p>
+            </div>
+            <div class="uploaded-file">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span>johndoe_resume.pdf</span>
+              <i class="fa-solid fa-check-circle text-success"></i>
+            </div>
+          </section>
+
+          <!-- Job Role Selection -->
+          <section class="card roles-section">
+            <h3><i class="fa-solid fa-briefcase"></i> Select Role</h3>
+            <div class="role-list">
+              <label class="role-card">
+                <input type="radio" name="role" checked>
+                <div class="role-content">Software Developer</div>
+              </label>
+              <label class="role-card">
+                <input type="radio" name="role">
+                <div class="role-content">Data Analyst</div>
+              </label>
+              <label class="role-card">
+                <input type="radio" name="role">
+                <div class="role-content">HR Interview</div>
+              </label>
+            </div>
+          </section>
+
+          <!-- Tips & Guidance Section -->
+          <section class="card tips-section">
+            <h3><i class="fa-solid fa-lightbulb"></i> Interview Tips</h3>
+            <ul class="tips-list">
+              <li><i class="fa-solid fa-star"></i> Use the STAR method to structure answers.</li>
+              <li><i class="fa-solid fa-eye"></i> Maintain eye contact with the camera.</li>
+              <li><i class="fa-solid fa-bolt"></i> Keep your answers under 2 minutes.</li>
+            </ul>
+          </section>
+
+        </div>
+
+        <!-- Center Column: Interview Interface -->
+        <div class="center-content">
+          
+          <!-- Question Categories -->
+          <div class="category-tabs">
+            <button class="tab active">Technical</button>
+            <button class="tab">Behavioral</button>
+            <button class="tab">HR Questions</button>
+          </div>
+
+          <!-- Interview Interface -->
+          <section class="card interview-panel">
+            <div class="panel-header">
+              <span class="question-number">Question 1 of 5</span>
+              <div class="timer">
+                <i class="fa-regular fa-clock"></i> 02:45
+              </div>
+            </div>
+            <h2 class="question-text">Can you explain the difference between REST and GraphQL? What are the pros and cons of each?</h2>
+            
+            <div class="answer-area">
+              <textarea placeholder="Type your answer here or use the microphone..."></textarea>
+              <div class="controls">
+                <button class="btn-icon mic-btn scanning" aria-label="Microphone">
+                  <i class="fa-solid fa-microphone"></i>
+                  <span class="mic-tooltip">Listening...</span>
+                  <div class="ripple"></div>
+                </button>
+                <div class="action-btns">
+                  <button class="btn-secondary">Skip</button>
+                  <button class="btn-primary">Submit Answer</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- AI Response Simulation & Chat interface -->
+          <section class="card ai-feedback">
+            <h3>AI Feedback</h3>
+            <div class="chat-interface">
+              <div class="message user-message">
+                REST uses multiple endpoints, while GraphQL uses a single endpoint for all data requests. Oh, and GraphQL prevents over-fetching.
+              </div>
+              <div class="message ai-message loading">
+                <div class="typing-indicator">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="message ai-message">
+                <p><strong>Good answer, but try to be more structured.</strong></p>
+                <p>You correctly identified that GraphQL uses a single endpoint and addresses over-fetching. To improve your response:</p>
+                <ul>
+                  <li>Add real-world examples (like a mobile app needing specific data).</li>
+                  <li>Mention caching differences (REST has built-in HTTP caching).</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column: Dashboard -->
+        <div class="sidebar right-sidebar">
+          
+          <!-- Performance Dashboard -->
+          <section class="card dashboard-section">
+            <h3><i class="fa-solid fa-chart-line"></i> Performance</h3>
+            <div class="score-circle">
+              <div class="score-value">8<small>/10</small></div>
+            </div>
+            
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-header">
+                  <span>Confidence</span>
+                  <span>85%</span>
+                </div>
+                <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+              </div>
+              <div class="metric">
+                <div class="metric-header">
+                  <span>Communication</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress-bar"><div class="progress" style="width: 90%; background: var(--secondary)"></div></div>
+              </div>
+              <div class="metric">
+                <div class="metric-header">
+                  <span>Technical Skills</span>
+                  <span>75%</span>
+                </div>
+                <div class="progress-bar"><div class="progress" style="width: 75%; background: var(--accent)"></div></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Progress Tracker & History -->
+          <section class="card history-section">
+            <h3><i class="fa-solid fa-clock-rotate-left"></i> History</h3>
+            <div class="history-cards">
+              <div class="history-item">
+                <div class="history-info">
+                  <h4>Software Developer</h4>
+                  <span>Today, 10:30 AM</span>
+                </div>
+                <span class="badge success">Completed</span>
+              </div>
+              <div class="history-item">
+                <div class="history-info">
+                  <h4>Data Analyst</h4>
+                  <span>Yesterday</span>
+                </div>
+                <span class="badge warning">Incomplete</span>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>
